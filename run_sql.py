@@ -17,8 +17,18 @@ with open("sql/02_insert_data.sql", "r") as file:
     sql = file.read()
     cursor.execute(sql)
 
+with open("sql/03_queries.sql") as file:
+    sql = file.read()
+    queries = sql.split(";")
+
+    for query in queries:
+        if query.strip():
+            cursor.execute(query)
+
+            result = cursor.fetchall()
+            print(result)
+
 con.commit()
 
 cursor.close()
 con.close()
-

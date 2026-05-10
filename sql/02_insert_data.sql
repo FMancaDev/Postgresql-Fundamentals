@@ -2,7 +2,8 @@ INSERT INTO authors (name, nationality)
 VALUES
 ('José Saramago', 'Português'),
 ('George Orwell', 'Inglês'),
-('Fernando Pessoa', 'Português');
+('Fernando Pessoa', 'Português')
+ON CONFLICT DO NOTHING;
 
 INSERT INTO books(title, year_of_publication, author_id)
 VALUES (

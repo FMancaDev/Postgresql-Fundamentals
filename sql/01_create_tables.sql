@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS authors(
 	id SERIAL PRIMARY KEY,
-	name VARCHAR(50),
+	name VARCHAR(50) UNIQUE,
 	nationality VARCHAR(50)
 );
 
