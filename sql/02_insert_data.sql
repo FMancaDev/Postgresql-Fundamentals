@@ -10,7 +10,8 @@ VALUES (
 	'Ensaio sobre a Lucidez',
 	2004,
 	(SELECT id FROM authors WHERE name = 'José Saramago')
-);
+)
+ON CONFLICT DO NOTHING;
 
 
 INSERT INTO books(title, year_of_publication, author_id)
@@ -18,7 +19,8 @@ VALUES (
 	'Penguin Essentials',
 	1984,
 	(SELECT id FROM authors WHERE name = 'George Orwell')
-);
+)
+ON CONFLICT DO NOTHING;
 
 INSERT INTO books(title, year_of_publication, author_id)
 VALUES (
@@ -26,5 +28,4 @@ VALUES (
 	2018,
 	(SELECT id FROM authors WHERE name = 'Fernando Pessoa')
 )
-
---- o select serve para corresponder o author_id ao id do autor---
+ON CONFLICT DO NOTHING;

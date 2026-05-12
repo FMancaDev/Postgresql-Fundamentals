@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS authors(
 
 CREATE TABLE IF NOT EXISTS books(
 	id SERIAL PRIMARY KEY,
-	title VARCHAR(200),
+	title VARCHAR(200) UNIQUE,
 	year_of_publication INTEGER,
 	author_id INTEGER REFERENCES authors(id)
-)
+);
