@@ -8,8 +8,5 @@ JOIN books
 	ON authors.id = books.author_id
 GROUP BY authors.name;
 
-SELECT MIN(year_of_publication)
-FROM books;
-
-SELECT MAX(year_of_publication)
-FROM books;
+SELECT MIN(year_of_publication), MAX(year_of_publication)
+FROM books

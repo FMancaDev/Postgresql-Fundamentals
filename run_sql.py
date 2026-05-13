@@ -28,6 +28,22 @@ with open("sql/03_queries.sql") as file:
             result = cursor.fetchall()
             print(result)
 
+with open("sql/04_aggregations.sql", "r") as file:
+    sql = file.read()
+    queries = sql.split(";")
+
+    for query in queries:
+        if query.strip():
+            cursor.execute(query)
+
+            result = cursor.fetchall()
+            print(result)
+
+with open("sql/05_update_delete.sql", "r") as file:
+    sql = file.read()
+    cursor.execute(sql)
+
+
 con.commit()
 
 cursor.close()
